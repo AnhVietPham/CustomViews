@@ -3,11 +3,11 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:orientation="vertical">
-    <com.avp.customviews.rectangular.RectangularCustomView
-            android:layout_width="300sp"
-            android:layout_height="300sp"/>
+    <com.avp.customviews.customviews.RectangularCustomView
+            android:id="@+id/rectangularCustomView"
+            android:layout_width="300dp"
+            android:layout_height="300dp"/>
 
     <LinearLayout
             android:layout_width="match_parent"
