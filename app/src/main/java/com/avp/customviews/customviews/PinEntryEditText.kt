@@ -7,11 +7,10 @@ import android.os.Build
 import android.text.Editable
 import android.util.AttributeSet
 import android.widget.EditText
-import com.sun.xml.internal.fastinfoset.util.CharArray
 
 
 class PinEntryEditText : EditText {
-    val XML_NAMESPACE_ANDROID = "http://schemas.android.com/apk/res/android"
+    private val XML_NAMESPACE_ANDROID = "http://schemas.android.com/apk/res/android"
     private var mSpace: Float = 24f
     private var mCharSize: Float = 0f
     private var mNumberChars: Float = 6f
@@ -63,7 +62,7 @@ class PinEntryEditText : EditText {
 
 
         // Text Width
-        val text : Editable = text
+        val text: Editable = text
         val textLength = text.length
         val textWidths = FloatArray(textLength)
         paint.getTextWidths(getText(), 0, textLength, textWidths)
@@ -77,9 +76,16 @@ class PinEntryEditText : EditText {
                 paint
             )
 
-            if (text.length > i){
+            if (text.length > i) {
                 val middle: Float = startX + mCharSize / 2
-                canvas?.drawText(text,i,i+1, middle - textW)
+                canvas?.drawText(
+                    text.toString(),
+                    i,
+                    i + 1,
+                    middle - textWidths[0] / 2,
+                    bottom - mLineSpacing,
+                    paint
+                )
             }
 
             startX += if (mSpace < 0) {
