@@ -7,8 +7,10 @@
         android:orientation="vertical">
 
     <com.avp.customviews.customviews.PinEntryEditText
+            android:id="@+id/pinEntryEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="16dp"
             android:cursorVisible="false"
             android:digits="1234567890"
             android:inputType="number"
@@ -17,7 +19,11 @@
             android:textColor="@android:color/black"
             android:textStyle="bold"
             android:textIsSelectable="false"
-            android:layout_margin="40dp"
             android:textSize="20sp" />
-
+    <Button
+            android:id="@+id/btGet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lấy"
+            />
 </LinearLayout>

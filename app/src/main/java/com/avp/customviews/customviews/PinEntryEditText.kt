@@ -51,15 +51,10 @@ class PinEntryEditText : EditText {
 
     override fun onDraw(canvas: Canvas?) {
         val availableWidth = width - paddingRight - paddingLeft
-        mCharSize = if (mSpace < 0) {
-            (availableWidth / (mNumberChars * 2 - 1))
-        } else {
-            (availableWidth - (mSpace * (mNumberChars - 1))) / mNumberChars
-        }
+        mCharSize = (availableWidth - (mSpace * (mNumberChars - 1))) / mNumberChars
 
         var startX: Float = paddingLeft.toFloat()
         val bottom: Float = height.toFloat() - paddingBottom.toFloat()
-
 
         // Text Width
         val text: Editable = text
@@ -88,11 +83,8 @@ class PinEntryEditText : EditText {
                 )
             }
 
-            startX += if (mSpace < 0) {
-                mCharSize + 2
-            } else {
-                mCharSize + mSpace
-            }
+            startX += mCharSize + mSpace
+
         }
     }
 }
