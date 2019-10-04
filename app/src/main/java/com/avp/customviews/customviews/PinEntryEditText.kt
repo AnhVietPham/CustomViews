@@ -15,7 +15,7 @@ class PinEntryEditText : EditText {
     private var mCharSize: Float = 0f
     private var mNumberChars: Float = 6f
     private var mLineSpacing: Float = 8f
-    private var mMaxLength = 4
+    private var mMaxLength = 6
 
     constructor(context: Context?) : super(context)
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
