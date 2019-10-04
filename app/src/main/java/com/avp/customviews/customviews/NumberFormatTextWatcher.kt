@@ -10,6 +10,8 @@ import java.util.*
 class NumberFormatTextWatcher(private val editText: AppCompatEditText) : TextWatcher {
     companion object {
         const val PATTERN_FORMAT_NUMBER = "#,###,###"
+        const val REGEX_OLD_VALUE = ","
+        const val REGEX_NEW_VALUE = ""
     }
 
     override fun afterTextChanged(s: Editable?) {
@@ -17,8 +19,8 @@ class NumberFormatTextWatcher(private val editText: AppCompatEditText) : TextWat
         try {
             var originalString = s.toString()
             val originalLong: Long
-            if (originalString.contains(",")) {
-                originalString = originalString.replace(",", "")
+            if (originalString.contains(REGEX_OLD_VALUE)) {
+                originalString = originalString.replace(REGEX_OLD_VALUE, REGEX_NEW_VALUE)
             }
 
             originalLong = originalString.toLong()
